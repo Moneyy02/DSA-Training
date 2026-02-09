@@ -34,7 +34,29 @@ s consists only of printable ASCII characters.
 class Solution {
 public:
     bool isPalindrome(string s) {
-        string str = "";
+        int n = s.size();
+        int left =0;
+        int right = n-1;
+        while(left<right){
+            while(left<right && !isalnum(s[left])){
+                left++;
+            }
+            while(left<right && !isalnum(s[right])){
+                right--;
+            }
+            if(tolower(s[left])!=tolower(s[right])){
+                return false;
+
+            }left++;
+            right--;
+        }return true;
+        
+    }
+};
+
+
+/*
+string str = "";
         int n = s.size();
 
         for (int i = 0; i < n; i++) {
@@ -51,19 +73,4 @@ public:
             }
         }
 
-        return true;
-    }
-};
-
-
-/* s = s.replaceAll("[^a-zA-Z0-9]", "").toLowerCase(); 
-        int left=0;
-        int right = s.length()-1;
-        while(left<right){
-            if(s.charAt(left)!= s.charAt(right)){
-                return false;           
-            }
-                left++;
-                right--;
-        }
-        return true;*/
+        return true; */
