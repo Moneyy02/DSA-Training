@@ -48,7 +48,7 @@ public:
 };
 
 
-
+// brute force
         /* int maxwater = 0;
         int minht=0;
         for(int i=0;i<n;i++){
